@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 143896516}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -978,6 +978,87 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapTopRight: {fileID: 1017598805}
   mapBotLeft: {fileID: 783029562}
+--- !u!1001 &989999664
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1701877487823764473, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c353f7057da35640bdff38d63dda4d8, type: 2}
+    - target: {fileID: 3434241053413868087, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434241053413868087, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.662
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434241053413868087, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434241053413868087, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.0531197
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434241053413868087, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434241053413868087, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434241053413868087, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434241053413868087, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434241053413868087, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434241053413868087, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434241053413868087, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611212068081726662, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611212068081726662, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611212068081726662, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: spearPrefab
+      value: 
+      objectReference: {fileID: 624732326964543333, guid: b9ee2462a7ca35445820dea74446df4a, type: 3}
+    - target: {fileID: 7611212068081726662, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: rotationSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028240421202053673, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028240421202053673, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
+      propertyPath: m_Name
+      value: HumanMatador
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45335f97cceb1404fb9e6c169ed181cd, type: 3}
 --- !u!1 &1017598804
 GameObject:
   m_ObjectHideFlags: 0
