@@ -8,7 +8,8 @@ public class HumanSpawner : MonoBehaviour
     System.Random random = new System.Random();
     private int instanceNumber = 1;
     public HumanSpawnerSO spawnerSettings;
-
+    [Tooltip("The total work time for spawner")]
+    public float totalTime = 30f;
     private float nextSpawn = 0f;
     [Tooltip("The time between spawns")]
     public float spawnTime = 5.0f;
@@ -18,11 +19,11 @@ public class HumanSpawner : MonoBehaviour
     }
     void Update()
     {
-       
+
         nextSpawn += Time.deltaTime;
 
-        
-        if (nextSpawn > spawnTime)
+
+        if (nextSpawn > spawnTime && Time.time <= totalTime)
         {
             spawnHumans();
             nextSpawn = 0f;
@@ -33,11 +34,11 @@ public class HumanSpawner : MonoBehaviour
     private void spawnHumans()
     {
 
-        int currentSpawnPointIndex = random.Next(0, spawnerSettings.spawnPoints.Length); 
-        
+        int currentSpawnPointIndex = random.Next(0, spawnerSettings.spawnPoints.Length);
+
         for (int i = 0; i < spawnerSettings.numberOfHumanToSpawn; i++)
-        {                     
-            int j = random.Next(0, spawnerSettings.humanTypes.Length); 
+        {
+            int j = random.Next(0, spawnerSettings.humanTypes.Length);
 
             GameObject currentHuman = Instantiate(spawnerSettings.humanTypes[j], spawnerSettings.spawnPoints[currentSpawnPointIndex].position, Quaternion.identity);
             currentHuman.name = spawnerSettings.humanTypes[j].name + instanceNumber;
@@ -48,5 +49,5 @@ public class HumanSpawner : MonoBehaviour
 
     }
 
- 
+
 }
