@@ -18,7 +18,7 @@ public class DeadCounterScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Enemy" ^ other.gameObject.tag =="Escaper")
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag =="Escaper")
         {
             other.gameObject.tag = "Dead";
             deadCount++;

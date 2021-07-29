@@ -9,8 +9,7 @@ public class HumanSpawner : MonoBehaviour
     private int instanceNumber = 1;
     public HumanSpawnerSO spawnerSettings;
     [Tooltip("The total work time for spawner")]
-    public float totalSpawnTime = 30f;
-    //public float numToSpawnForNextLevel = 20;
+    public float totalSpawnTime = 30f; 
     private float nextSpawn = 0f;
     [Tooltip("The time between spawns")]
     public float spawnTime = 5.0f;

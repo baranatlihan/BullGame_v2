@@ -54,7 +54,7 @@ public class HumanRunScript : MonoBehaviour
         }
 
 
-        if (gameObject.tag == "Escaper" && nmagent.remainingDistance <= 0.15f  )
+        if (gameObject.tag == "Escaper" && nmagent.remainingDistance <= 0.15f)
         {            
             Destroy(gameObject);
         }
