@@ -9,10 +9,12 @@ public class HumanSpawner : MonoBehaviour
     private int instanceNumber = 1;
     public HumanSpawnerSO spawnerSettings;
     [Tooltip("The total work time for spawner")]
-    public float totalTime = 30f;
+    public float totalSpawnTime = 30f;
+    //public float numToSpawnForNextLevel = 20;
     private float nextSpawn = 0f;
     [Tooltip("The time between spawns")]
     public float spawnTime = 5.0f;
+
     private void Start()
     {
         nextSpawn = 0f;
@@ -23,11 +25,13 @@ public class HumanSpawner : MonoBehaviour
         nextSpawn += Time.deltaTime;
 
 
-        if (nextSpawn > spawnTime && Time.time <= totalTime)
+        if (nextSpawn > spawnTime && Time.time <= totalSpawnTime)
         {
             spawnHumans();
             nextSpawn = 0f;
         }
+
+        
 
     }
 
@@ -38,10 +42,11 @@ public class HumanSpawner : MonoBehaviour
 
         for (int i = 0; i < spawnerSettings.numberOfHumanToSpawn; i++)
         {
-            int j = random.Next(0, spawnerSettings.humanTypes.Length);
+            int j = random.Next(0, spawnerSettings.humanTypes.Length);  //rastgele insan tipi 
 
             GameObject currentHuman = Instantiate(spawnerSettings.humanTypes[j], spawnerSettings.spawnPoints[currentSpawnPointIndex].position, Quaternion.identity);
-            currentHuman.name = spawnerSettings.humanTypes[j].name + instanceNumber;
+            currentHuman.name = spawnerSettings.humanTypes[j].name + instanceNumber;    //oluþan insanýn ismi
+    
 
             currentSpawnPointIndex = (currentSpawnPointIndex + 1) % spawnerSettings.spawnPoints.Length;
             instanceNumber++;
