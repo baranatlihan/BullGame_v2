@@ -22,12 +22,19 @@ public class MatadorMovement : MonoBehaviour
     private bool canMove = true;
     private GameObject player;
 
+    Collider[] rigColliders;
+    Rigidbody[] rigRigidbodies;
+
     private bool escapeState = false;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        rigColliders = GetComponentsInChildren<Collider>();
+        rigRigidbodies = GetComponentsInChildren<Rigidbody>();
+
+        
     }
 
     
@@ -86,13 +93,18 @@ public class MatadorMovement : MonoBehaviour
 
     }
 
-   
+   public void activateRagdoll()
+    {
+       
+       
+    }
+
 
 
     private void throwSpear()
     {
  
-        GameObject spear = Instantiate(spearPrefab, transform.position + new Vector3(0.2f,0.5f,0), transform.rotation);
+        GameObject spear = Instantiate(spearPrefab, transform.position + new Vector3(0.2f,1.2f,0), transform.rotation);
 
     }
 }
