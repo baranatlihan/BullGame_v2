@@ -159,5 +159,5 @@ MonoBehaviour:
   - {fileID: 8330476267387309285, guid: 1c4581be0450c224d9e1bfc8eff021d2, type: 3}
   - {fileID: 8319460706239412867, guid: 2181a47e51de33a43afb27c16ca81395, type: 3}
   DestroyTime: 5
-  EscapeStartTime: 20
+  EscapeStartTime: 30
   ExitPoint: {fileID: 2970753967043290102, guid: bb86a16682c619b4ab5b2465e0f6eda3, type: 3}

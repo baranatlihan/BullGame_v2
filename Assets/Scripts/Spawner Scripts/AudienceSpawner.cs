@@ -9,7 +9,6 @@ public class AudienceSpawner : MonoBehaviour
     public int numberOfToSpawn = 0;
     [SerializeField]
     public GameObject[] humanTypes;
-    private Transform objPos;
     System.Random random = new System.Random();
     // Start is called before the first frame update
     void Start()
@@ -56,9 +55,20 @@ public class AudienceSpawner : MonoBehaviour
 
 
             int j = random.Next(0, humanTypes.Length);  //rastgele insan tipi 
-            GameObject currentAudience = Instantiate(humanTypes[j], transform.localPosition, Quaternion.Euler(0, 90, 0));
-            currentAudience.name = humanTypes[j].name + instanceNumber; //oluþan insanýn ismi
-            instanceNumber++;
+            int control = random.Next(0, 2);
+            if (!turn90 && control ==0) { 
+                GameObject currentAudience = Instantiate(humanTypes[j], transform.localPosition, Quaternion.Euler(0, 90, 0), transform.parent); //container içine oluþturma
+                currentAudience.name = humanTypes[j].name + instanceNumber; //oluþan insanýn ismi
+                instanceNumber++;
+            }
+            else if (turn90 && control == 0)
+            { 
+                GameObject currentAudience = Instantiate(humanTypes[j], transform.localPosition, Quaternion.identity, transform.parent); //container içine oluþturma
+                currentAudience.name = humanTypes[j].name + instanceNumber; //oluþan insanýn ismi
+                instanceNumber++;
+            }
+
+            
         }
     }
 }

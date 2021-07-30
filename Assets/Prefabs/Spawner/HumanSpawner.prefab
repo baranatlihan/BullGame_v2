@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3826329413732994477}
   - component: {fileID: 3826329413732994482}
+  - component: {fileID: -2312964903858199895}
   m_Layer: 0
   m_Name: HumanSpawner
   m_TagString: Untagged
@@ -45,5 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerSettings: {fileID: 11400000, guid: 608c978d1330a8b47a6b964d47ce54e2, type: 2}
   totalSpawnTime: 30
-  numToSpawnForNextLevel: 20
   spawnTime: 2
+--- !u!114 &-2312964903858199895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826329413732994476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c24d79a648cf24eb4a4360b760ab9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelTime: 60
