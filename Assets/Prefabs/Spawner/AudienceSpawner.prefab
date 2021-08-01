@@ -46,6 +46,6 @@ MonoBehaviour:
   turn90: 0
   numberOfToSpawn: 30
   humanTypes:
-  - {fileID: 6243233748018524155, guid: bfeaf5c99bebcdf42a20ddc0861cc6a7, type: 3}
-  - {fileID: 5198005748833348662, guid: 64033b86185336c49bfb4eec06816641, type: 3}
-  - {fileID: 8398733229364063325, guid: f826441bd60eedf48bf57970cc2318c8, type: 3}
+  - {fileID: 4345109928979720486, guid: 64033b86185336c49bfb4eec06816641, type: 3}
+  - {fileID: 1743102138242869424, guid: bfeaf5c99bebcdf42a20ddc0861cc6a7, type: 3}
+  - {fileID: 8138284441569158709, guid: f826441bd60eedf48bf57970cc2318c8, type: 3}

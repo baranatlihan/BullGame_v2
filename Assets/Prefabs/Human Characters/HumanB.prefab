@@ -150,14 +150,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HumanSettings: {fileID: 11400000, guid: d7b4324f7e50cfd41a9c77e3be6c0e0c, type: 2}
   Points:
-  - {fileID: 4047308168242363619, guid: c7ebfe584f727b14d92939dbe9457058, type: 3}
-  - {fileID: 5980201911562728028, guid: 299405ebefaf44343bb2b250a0742129, type: 3}
-  - {fileID: 7932024136310380795, guid: 3c6d8bcea94c2f343b016fa2b0e6b09f, type: 3}
-  - {fileID: 7100677949000705159, guid: 04fab829effcf004f8a0ad866cc38263, type: 3}
-  - {fileID: 307015530773591939, guid: 1c55ab779836a1948838c70a7997373a, type: 3}
-  - {fileID: 3117310017882228941, guid: c6bc08bc08f704e4a8473004f07a085e, type: 3}
-  - {fileID: 8330476267387309285, guid: 1c4581be0450c224d9e1bfc8eff021d2, type: 3}
-  - {fileID: 8319460706239412867, guid: 2181a47e51de33a43afb27c16ca81395, type: 3}
+  - {fileID: 282075567719212231, guid: c7ebfe584f727b14d92939dbe9457058, type: 3}
+  - {fileID: 1257518977053315520, guid: 299405ebefaf44343bb2b250a0742129, type: 3}
+  - {fileID: 1560531144086912424, guid: 3c6d8bcea94c2f343b016fa2b0e6b09f, type: 3}
+  - {fileID: 8464407682971573560, guid: 04fab829effcf004f8a0ad866cc38263, type: 3}
+  - {fileID: 1979473945665044885, guid: 1c55ab779836a1948838c70a7997373a, type: 3}
+  - {fileID: 5106582279473814065, guid: c6bc08bc08f704e4a8473004f07a085e, type: 3}
+  - {fileID: 7627445615781581247, guid: 1c4581be0450c224d9e1bfc8eff021d2, type: 3}
+  - {fileID: 5237191412483790540, guid: 2181a47e51de33a43afb27c16ca81395, type: 3}
   DestroyTime: 5
   EscapeStartTime: 30
-  ExitPoint: {fileID: 2970753967043290102, guid: bb86a16682c619b4ab5b2465e0f6eda3, type: 3}
+  ExitPoint: {fileID: 6006026841617410415, guid: 5d21bea61d6933e47b6dcb05c461ce79, type: 3}

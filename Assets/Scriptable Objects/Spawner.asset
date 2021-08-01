@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Spawner
   m_EditorClassIdentifier: 
   spawnPoints:
-  - {fileID: 6983595084380437032, guid: c7ebfe584f727b14d92939dbe9457058, type: 3}
-  - {fileID: 2620303442893777701, guid: 299405ebefaf44343bb2b250a0742129, type: 3}
-  - {fileID: 7867742815329689097, guid: 3c6d8bcea94c2f343b016fa2b0e6b09f, type: 3}
-  - {fileID: 1772471039231165400, guid: 04fab829effcf004f8a0ad866cc38263, type: 3}
-  - {fileID: 3410382112105930437, guid: 1c55ab779836a1948838c70a7997373a, type: 3}
-  - {fileID: 6736614665137569071, guid: c6bc08bc08f704e4a8473004f07a085e, type: 3}
-  - {fileID: 1346859606294439147, guid: 1c4581be0450c224d9e1bfc8eff021d2, type: 3}
-  - {fileID: 1953302865833670259, guid: 2181a47e51de33a43afb27c16ca81395, type: 3}
+  - {fileID: 3560103858993745087, guid: c7ebfe584f727b14d92939dbe9457058, type: 3}
+  - {fileID: 4549630627660004886, guid: 299405ebefaf44343bb2b250a0742129, type: 3}
+  - {fileID: 7227837111226015669, guid: 3c6d8bcea94c2f343b016fa2b0e6b09f, type: 3}
+  - {fileID: 3288938566420148601, guid: 04fab829effcf004f8a0ad866cc38263, type: 3}
+  - {fileID: 1214539647122118878, guid: 1c55ab779836a1948838c70a7997373a, type: 3}
+  - {fileID: 213768124406139152, guid: c6bc08bc08f704e4a8473004f07a085e, type: 3}
+  - {fileID: 981977720624104484, guid: 1c4581be0450c224d9e1bfc8eff021d2, type: 3}
+  - {fileID: 2883916445848204088, guid: 2181a47e51de33a43afb27c16ca81395, type: 3}
   humanTypes:
-  - {fileID: 3281098501295982888, guid: 0c16c8778790eb049a8b4de17f8317ec, type: 3}
-  - {fileID: 1467455546959074876, guid: d2cc9f6de77d4d448b7a3dea3d018072, type: 3}
-  - {fileID: 359908133234706277, guid: 5a1a3146f5f0a884fa63c8a35da5d4ea, type: 3}
-  - {fileID: 4586304748641546259, guid: ff29b550eb25be4499ae5d7cc0e3ee86, type: 3}
+  - {fileID: 1853308709469499289, guid: d95183058e6c83d4aaacf9d4daf7c554, type: 3}
+  - {fileID: 1543059180508292846, guid: 3532ce259cb6ffe479a8ad3fd67310d6, type: 3}
+  - {fileID: 7843145423605925262, guid: 7a4b9188e807a874d9a7c806282f9bf0, type: 3}
+  - {fileID: 3353587836365331003, guid: bbf42ec109f4ef14c979c58a2ce560db, type: 3}
   numberOfHumanToSpawn: 1
   settings: {fileID: 0}
