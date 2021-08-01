@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ScoreScene.unity
     guid: 378d72c91f805ee4787dd45cd072588f
+  - enabled: 1
+    path: Assets/Scenes/RageAttackCinema.unity
+    guid: ee9db174f03ed074fb53cf823e08a5c1
+  - enabled: 1
+    path: Assets/Scenes/RageAttackLevel.unity
+    guid: c14da669ec66c1e4f9befc11795f6246
   m_configObjects: {}
