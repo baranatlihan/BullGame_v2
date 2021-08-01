@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - Dead
   - Escaper
+  - Gate
+  - BreakingGate
   layers:
   - Default
   - TransparentFX
