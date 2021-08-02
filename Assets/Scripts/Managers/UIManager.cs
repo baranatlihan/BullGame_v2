@@ -9,9 +9,9 @@ public class UIManager : MonoBehaviour
 {
     private GameObject currentScreen;
 
-    public GameObject endScreen;
+    
     public GameObject gameScreen;
-    public GameObject mainScreen;
+    public GameObject menuScreen;
     public GameObject returnScreen;
 
 
@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void checkUI()
+    public void refreshUI()
     {
 
     }

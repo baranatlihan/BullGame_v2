@@ -80,8 +80,8 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
             }
             else
             {
-                UIManager.instance.changeScreen("game");
-                UIManager.instance.changeScreen("main");
+                UIManager.instance.refreshUI();
+
             }
         }
     }
@@ -102,7 +102,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
             hornLength++;
             PlayerPrefs.SetInt("hornLength", hornLength);
-            UIManager.instance.checkUI();
+            UIManager.instance.refreshUI();
         }
     }
 
@@ -115,7 +115,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
             speed++;
             PlayerPrefs.SetInt("speed", hornLength);
-            UIManager.instance.checkUI();
+            UIManager.instance.refreshUI();
         }
     }
 
@@ -128,7 +128,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
             offline++;
             PlayerPrefs.SetInt("offline", offline);
-            UIManager.instance.checkUI();
+            UIManager.instance.refreshUI();
         }
     }
 
@@ -136,8 +136,8 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
     {
         wallet += totalGain;
         PlayerPrefs.SetInt("Wallet", wallet);
-        UIManager.instance.changeScreen("game");
-        UIManager.instance.changeScreen("main");
+        UIManager.instance.refreshUI();
+
     }
 
     public void ShowAd()
@@ -169,8 +169,8 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
         ShowAd();
         wallet += (2 * totalGain);
         PlayerPrefs.SetInt("Wallet", wallet);
-        UIManager.instance.changeScreen("game");
-        UIManager.instance.changeScreen("main");
+        UIManager.instance.refreshUI();
+       
 
     }
 
