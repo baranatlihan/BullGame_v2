@@ -21,7 +21,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
     [HideInInspector]
     public int wallet;
     [HideInInspector]
-    public int totalGain;
+    public int totalGain = 0;
 
 
     private string gameAndroidId = "4243503";
@@ -76,11 +76,21 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
             {
                 DateTime d = DateTime.Parse(@string);
                 totalGain = (int)(((DateTime.Now - d).TotalMinutes * offline)/10);
-                UIManager.instance.changeScreen("return");
+                if(totalGain > 0)
+                {
+                    UIManager.instance.changeScreen(UIManager.instance.rewardScreen);
+                }
+                else
+                {
+                    UIManager.instance.refreshUI();
+                    UIManager.instance.changeScreen(UIManager.instance.menuScreen);
+                }
+               
             }
             else
             {
                 UIManager.instance.refreshUI();
+                UIManager.instance.changeScreen(UIManager.instance.menuScreen);
 
             }
         }
@@ -136,6 +146,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
     {
         wallet += totalGain;
         PlayerPrefs.SetInt("Wallet", wallet);
+        UIManager.instance.changeScreen(UIManager.instance.menuScreen);
         UIManager.instance.refreshUI();
 
     }
@@ -169,6 +180,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
         ShowAd();
         wallet += (2 * totalGain);
         PlayerPrefs.SetInt("Wallet", wallet);
+        UIManager.instance.changeScreen(UIManager.instance.menuScreen);
         UIManager.instance.refreshUI();
        
 
@@ -176,17 +188,17 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsReady(string placementId)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     public void OnUnityAdsDidError(string message)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     public void OnUnityAdsDidStart(string placementId)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
    
