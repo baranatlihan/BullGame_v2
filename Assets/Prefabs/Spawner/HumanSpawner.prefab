@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3826329413732994477}
   - component: {fileID: 3826329413732994482}
   - component: {fileID: -2312964903858199895}
+  - component: {fileID: 1897226395}
+  - component: {fileID: 1897226396}
   m_Layer: 0
   m_Name: HumanSpawner
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3826329413732994476}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20.62, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -45,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnerSettings: {fileID: 11400000, guid: 608c978d1330a8b47a6b964d47ce54e2, type: 2}
-  totalSpawnTime: 30
-  spawnTime: 2
+  totalSpawnTime: 28
+  spawnTime: 1
 --- !u!114 &-2312964903858199895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,4 +61,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c24d79a648cf24eb4a4360b760ab9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelTime: 60
+  LevelTime: 30
+--- !u!114 &1897226395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826329413732994476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e617a3ceba18ecf45850acd9f40981cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDisplay: {fileID: 0}
+  SecondsLeft: 30
+  takingAway: 0
+--- !u!114 &1897226396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826329413732994476}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e7604af2782454c847bcaffe42c6ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalLevelSceneCounter: 1

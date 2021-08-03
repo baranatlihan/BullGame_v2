@@ -11,7 +11,7 @@ public class HumanRunScript : MonoBehaviour
     public GameObject ExitPoint;
     private NavMeshAgent nmagent = null;
     private int CurrentRandom, PreviousRandom;
-
+    
 
 
     private void Start()
@@ -20,6 +20,7 @@ public class HumanRunScript : MonoBehaviour
         nmagent.speed = HumanSettings.speed;
         CurrentRandom = Random.Range(0, Points.Length);
         nmagent.SetDestination(Points[CurrentRandom].transform.position);
+        
     }
     private void Update()
     {
@@ -59,12 +60,14 @@ public class HumanRunScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
             nmagent.GetComponent<NavMeshAgent>().enabled = false;
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(true);
             //gameObject.tag = "Dead"; Bu iþlem DeadCounterScript'te yapýlýyor.
         }
 
@@ -72,6 +75,7 @@ public class HumanRunScript : MonoBehaviour
         {
             CurrentRandom = Random.Range(0, Points.Length);
             nmagent.SetDestination(Points[CurrentRandom].transform.position);
+
         }
     }
 
@@ -82,6 +86,7 @@ public class HumanRunScript : MonoBehaviour
             nmagent.SetDestination(Points[PreviousRandom].transform.position);  
             nmagent.acceleration = 16;
             nmagent.speed *= 2;
+
         }
     }
     private void OnTriggerExit(Collider other)
@@ -89,5 +94,5 @@ public class HumanRunScript : MonoBehaviour
         nmagent.speed = HumanSettings.speed;
     }
 
-
+    
 }
