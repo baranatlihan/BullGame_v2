@@ -1,23 +1,11 @@
 fileFormatVersion: 2
-guid: 6ecf1864e6fca2a47b2de5345b6b3a65
+guid: 7945f75ea2ee5e84995a4a7f50d35247
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 5391778287149287283
-    second: 11496_Bull_v2.002|CylinderAction
-  - first:
-      74: 4781951162920444690
-    second: Armature|ArmatureAction
-  - first:
-      74: -8718967029479517697
-    second: Armature|ArmatureAction.006
-  - first:
-      74: 271997525282036724
-    second: Armature|CylinderAction
-  - first:
-      74: 3602085371921796995
-    second: Cylinder.001|CylinderAction
+      74: -623603649343465320
+    second: Scene
   externalObjects: {}
   materials:
     materialImportMode: 2
