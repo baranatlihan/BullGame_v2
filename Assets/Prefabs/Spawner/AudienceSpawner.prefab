@@ -44,8 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn90: 0
+  turn180: 0
+  turn45: 0
+  turn135: 0
   numberOfToSpawn: 30
   humanTypes:
-  - {fileID: 4345109928979720486, guid: 64033b86185336c49bfb4eec06816641, type: 3}
-  - {fileID: 1743102138242869424, guid: bfeaf5c99bebcdf42a20ddc0861cc6a7, type: 3}
-  - {fileID: 8138284441569158709, guid: f826441bd60eedf48bf57970cc2318c8, type: 3}
+  - {fileID: 9136766865042950700, guid: c731e914edbd7814d8468d425d34f048, type: 3}
+  - {fileID: 4173138374732009910, guid: 8287d404e7e0fae4588f50378295a0c8, type: 3}
+  - {fileID: 5101134279133043676, guid: 3a7f096c27e1e7b458538ede0d7e6ed6, type: 3}

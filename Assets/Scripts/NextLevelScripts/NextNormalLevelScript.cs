@@ -6,67 +6,75 @@ public class NextNormalLevelScript : MonoBehaviour
 {
     Scene scene;
     public float LevelTime;
+    private bool ScreenChange = false;
     private void Start()
     {
-        
+
         scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "RageAttackCinema")
+        {
+            Time.timeScale = 1;        
+        }     
 
         if (scene.name == "ScoreScene")
         {
-            Debug.Log("Scene name:" + scene.name);
+            Debug.Log("Scene name: " + scene.name);
         }
         else if (scene.name == "Level1")
         {
-            Debug.Log("Scene name:" + scene.name);
+            Debug.Log("Scene name: " + scene.name);
         }
         else if (scene.name == "RageAttackLevel")
         {
-            Debug.Log("\nScene name:" + scene.name);
+            Debug.Log("\nScene name: " + scene.name);
         }
         else
-            Debug.Log("YENI SCENE__________________");
+        {
+            Time.timeScale = 1;
+            Debug.Log("\nScene name: " + scene.name);
+        }
+            
     }
 
     public void Update()
     {
-        //Debug.Log("time:" + Time.timeSinceLevelLoad);
+        //Debug.Log("Time Scale: " + Time.timeScale);
 
         if (Time.timeSinceLevelLoad >= LevelTime)
         {
-            if (scene.name == "ScoreScene")
-            {
-                if (PlayerPrefs.GetInt("sceneCounter", 1) % 5 == 0)
-                {
-                    PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 1) + 1);
-                    Debug.Log("SCENE NAME:" + scene.name);
-                    SceneManager.LoadScene("RageAttackCinema");
-                }
-                else
-                {
-                    PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 1) + 1);
-                    Debug.Log("SCENE NAME:" + scene.name);
-                    SceneManager.LoadScene("Level1");
-                }
-            }
-
-            else if (scene.name == "RageAttackCinema")
-            {
+           if (scene.name == "RageAttackCinema")
+            { 
                 SceneManager.LoadScene("RageAttackLevel");
-            }
-
-            else if (scene.name == "Level1")
-            {
-                SceneManager.LoadScene("ScoreScene");
+                
             }
 
             else if (scene.name == "RageAttackLevel")
             {
+                Debug.Log("qweqweqwe");
+                PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 0) + 1);
                 SceneManager.LoadScene("ScoreScene");
             }
 
+            else if ((PlayerPrefs.GetInt("sceneCounter", 0) != 0) && (PlayerPrefs.GetInt("sceneCounter", 0) % 5 == 0))
+           {
+                SceneManager.LoadScene("RageAttackCinema");
+                Debug.Log("SCENE NAME:" + scene.name);
+           }                
+
+            else if (scene.name == "Level1" && !ScreenChange)
+            {
+                ScreenChange = true;
+                GameManager.instance.openRewardScreen();
+            }
+
+            else if (scene.name == "ScoreScene")
+            {
+                SceneManager.LoadScene("Level1");
+            }
 
         }
-
     }
+
 }
  

@@ -18,11 +18,12 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
     public int offline;
 
 
-    [HideInInspector]
+    //[HideInInspector]
     public int wallet;
-    [HideInInspector]
+    //[HideInInspector]
     public int totalGain = 0;
-
+    //[HideInInspector]
+    public int totalGainFromKills = 0;
 
     private string gameAndroidId = "4243503";
     private string placement = "rewardedVideo";
@@ -51,7 +52,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
         speed = PlayerPrefs.GetInt("speed", 1);
 
-        wallet = PlayerPrefs.GetInt("wallet", 0);
+        wallet = PlayerPrefs.GetInt("wallet", 0); 
 
     }
 
@@ -142,14 +143,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
         }
     }
 
-    public void collectMoney()
-    {
-        wallet += totalGain;
-        PlayerPrefs.SetInt("Wallet", wallet);
-        UIManager.instance.changeScreen(UIManager.instance.menuScreen);
-        UIManager.instance.refreshUI();
-
-    }
+    
 
     public void ShowAd()
     {
@@ -174,17 +168,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
                 break;
         }
     }
-
-    public void collectMoney2x()
-    {
-        ShowAd();
-        wallet += (2 * totalGain);
-        PlayerPrefs.SetInt("Wallet", wallet);
-        UIManager.instance.changeScreen(UIManager.instance.menuScreen);
-        UIManager.instance.refreshUI();
-       
-
-    }
+    
 
     public void OnUnityAdsReady(string placementId)
     {

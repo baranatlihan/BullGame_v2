@@ -24,7 +24,7 @@ public class HumanSpawner : MonoBehaviour
         nextSpawn += Time.deltaTime;
 
 
-        if (nextSpawn > spawnTime && Time.time <= totalSpawnTime)
+        if (nextSpawn > spawnTime && Time.deltaTime <= totalSpawnTime)
         {
             spawnHumans();
             nextSpawn = 0f;

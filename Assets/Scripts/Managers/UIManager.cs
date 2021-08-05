@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI goldText;
     [SerializeField]
     private TextMeshProUGUI gainedGoldText;
+
 
 
     public static UIManager instance;
@@ -119,7 +121,40 @@ public class UIManager : MonoBehaviour
         currentScreen.SetActive(false);
         screen.SetActive(true);
         currentScreen = screen;
+ 
 
     }
+
+    public void rewardScreenMoney(int deadCount)
+    {
+        UpgradeManager.instance.totalGainFromKills += deadCount; 
+        gainedGoldText.text = ("Earned " + deadCount + " gold");
+    }
+
+
+    public void collectMoney()
+    {
+        
+        UpgradeManager.instance.wallet += UpgradeManager.instance.totalGainFromKills;
+        PlayerPrefs.SetInt("wallet", UpgradeManager.instance.wallet);
+        Debug.Log("______" + PlayerPrefs.GetInt("wallet"));
+        UpgradeManager.instance.totalGainFromKills = 0;
+        refreshUI();
+        PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 0) + 1);
+        SceneManager.LoadScene("Level1");       
+    }
+    public void collectMoney2x()
+    {
+        UpgradeManager.instance.ShowAd();
+        UpgradeManager.instance.wallet += (2 * UpgradeManager.instance.totalGainFromKills);
+        PlayerPrefs.SetInt("wallet", UpgradeManager.instance.wallet);
+        UpgradeManager.instance.totalGainFromKills = 0;
+        refreshUI();
+        PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 0) + 1);
+        SceneManager.LoadScene("Level1");
+    }
+
+
+
 
 }

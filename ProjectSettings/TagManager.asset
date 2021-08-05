@@ -11,6 +11,9 @@ TagManager:
   - Escaper
   - Gate
   - BreakingGate
+  - Audience
+  - GirlEnemy
+  - AudienceGirl
   layers:
   - Default
   - TransparentFX

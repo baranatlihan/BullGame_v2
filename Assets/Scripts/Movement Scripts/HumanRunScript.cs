@@ -38,7 +38,7 @@ public class HumanRunScript : MonoBehaviour
         }
 
 
-        if (Time.time > EscapeStartTime && gameObject.tag == "Enemy" && nmagent.isActiveAndEnabled)
+        if (Time.deltaTime > EscapeStartTime && gameObject.tag == "Enemy" && nmagent.isActiveAndEnabled)
         {         
             gameObject.tag = "Escaper";
             nmagent.SetDestination(ExitPoint.transform.position);   

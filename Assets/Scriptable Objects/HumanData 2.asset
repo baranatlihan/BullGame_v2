@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288f2e03c73a11841aba20067095b38b, type: 3}
   m_Name: HumanData 2
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 8

@@ -16,7 +16,7 @@ public class SpearCollide : MonoBehaviour
             Rigidbody rb = GetComponentInParent<Rigidbody>();
             rb.constraints = RigidbodyConstraints.FreezeAll;
 
-            GetComponent<CapsuleCollider>().enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
 
             StartCoroutine(fadeOut());
 
