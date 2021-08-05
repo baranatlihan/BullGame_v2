@@ -41,7 +41,8 @@ public class UIManager : MonoBehaviour
 
 
     public static UIManager instance;
-
+    [SerializeField]
+    private bool checkUI = true;
 
     private void Awake()
     {
@@ -59,10 +60,14 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        refreshUI();
-        currentScreen = menuScreen;
-        gameScreen.SetActive(false);
-        Time.timeScale = 0;
+        if(checkUI)
+        {
+            refreshUI();
+            currentScreen = menuScreen;
+            gameScreen.SetActive(false);
+            Time.timeScale = 0;
+        }
+        
     }
 
     public void refreshUI()
@@ -139,7 +144,11 @@ public class UIManager : MonoBehaviour
         PlayerPrefs.SetInt("wallet", UpgradeManager.instance.wallet);
         Debug.Log("______" + PlayerPrefs.GetInt("wallet"));
         UpgradeManager.instance.totalGainFromKills = 0;
-        refreshUI();
+        if(checkUI)
+        {
+            refreshUI();
+        }
+        
         PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 0) + 1);
         SceneManager.LoadScene("Level1");       
     }
@@ -149,7 +158,10 @@ public class UIManager : MonoBehaviour
         UpgradeManager.instance.wallet += (2 * UpgradeManager.instance.totalGainFromKills);
         PlayerPrefs.SetInt("wallet", UpgradeManager.instance.wallet);
         UpgradeManager.instance.totalGainFromKills = 0;
-        refreshUI();
+        if(checkUI)
+        {
+            refreshUI();
+        }
         PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 0) + 1);
         SceneManager.LoadScene("Level1");
     }

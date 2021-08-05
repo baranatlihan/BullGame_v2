@@ -8,6 +8,11 @@ public class DeadHumanSpawner : MonoBehaviour
     [SerializeField]
     private GameObject deadHuman;
     [SerializeField]
+    private GameObject deadHuman1;
+    [SerializeField]
+    private GameObject deadHuman2;
+
+    [SerializeField]
     private GameObject humanParent;
     [SerializeField]
     private Transform spawnPos;
@@ -18,7 +23,7 @@ public class DeadHumanSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawnHumans(150,170));
+        StartCoroutine(spawnHumans((PlayerPrefs.GetInt("totalKillRage", 0) + PlayerPrefs.GetInt("totalKillBeforeRage", 0)) * 5,100));
     }
 
     // Update is called once per frame
