@@ -21,6 +21,10 @@ public class SpearCollide : MonoBehaviour
             StartCoroutine(fadeOut());
 
         }
+        else if(other.tag == "Player")
+        {
+            UIManager.instance.openDeadScreen();
+        }
     }
 
     private IEnumerator fadeOut()

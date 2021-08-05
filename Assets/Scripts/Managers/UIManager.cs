@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public GameObject gameScreen;
     public GameObject menuScreen;
     public GameObject rewardScreen;
+    public GameObject deadScreen;
 
 
 
@@ -140,7 +141,7 @@ public class UIManager : MonoBehaviour
     public void collectMoney()
     {
         
-        UpgradeManager.instance.wallet += UpgradeManager.instance.totalGainFromKills;
+        UpgradeManager.instance.wallet += UpgradeManager.instance.totalGainFromKills + UpgradeManager.instance.totalGain;
         PlayerPrefs.SetInt("wallet", UpgradeManager.instance.wallet);
         Debug.Log("______" + PlayerPrefs.GetInt("wallet"));
         UpgradeManager.instance.totalGainFromKills = 0;
@@ -156,7 +157,7 @@ public class UIManager : MonoBehaviour
     public void collectMoney2x()
     {
         UpgradeManager.instance.ShowAd();
-        UpgradeManager.instance.wallet += (2 * UpgradeManager.instance.totalGainFromKills);
+        UpgradeManager.instance.wallet += 2 * (UpgradeManager.instance.totalGainFromKills + UpgradeManager.instance.totalGain);
         PlayerPrefs.SetInt("wallet", UpgradeManager.instance.wallet);
         UpgradeManager.instance.totalGainFromKills = 0;
         if(checkUI)
@@ -169,6 +170,15 @@ public class UIManager : MonoBehaviour
     }
 
 
+    public void openDeadScreen()
+    {
+        Time.timeScale = 0;
+        changeScreen(deadScreen);
+    }
 
+    public void tryAgainButton()
+    {
+        SceneManager.LoadScene("Level1");
+    }
 
 }

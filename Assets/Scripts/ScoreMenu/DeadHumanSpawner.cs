@@ -35,11 +35,25 @@ public class DeadHumanSpawner : MonoBehaviour
 
     private IEnumerator spawnHumans(float totalDeadHuman,float totalHuman)
     {
+        GameObject human = deadHuman;
         float totalSpawned = 0;
         float totalFillAmount = (totalDeadHuman / totalHuman) *100 ;
         while(totalSpawned <= totalDeadHuman)
         {
-            Instantiate(deadHuman, spawnPos.position, Quaternion.Euler(Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f)),humanParent.transform);
+            int humanChoice = Random.Range(0, 10);
+            if(humanChoice <4)
+            {
+                human = deadHuman;
+            }
+            else if(humanChoice<8)
+            {
+                human = deadHuman1;
+            }
+            else
+            {
+                human = deadHuman2;
+            }
+            Instantiate(human, spawnPos.position, Quaternion.Euler(Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f)),humanParent.transform);
             totalSpawned++;
             bgFillImg.fillAmount = (totalSpawned * totalFillAmount*0.01f) / totalDeadHuman; 
             yield return new WaitForSeconds(0.1f);
