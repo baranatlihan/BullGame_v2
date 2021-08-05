@@ -132,7 +132,7 @@ public class UIManager : MonoBehaviour
 
     public void rewardScreenMoney(int deadCount)
     {
-        UpgradeManager.instance.totalGainFromKills += deadCount; 
+        UpgradeManager.instance.totalGainFromKills = deadCount; 
         gainedGoldText.text = ("Earned " + deadCount + " gold");
     }
 
@@ -147,9 +147,10 @@ public class UIManager : MonoBehaviour
         if(checkUI)
         {
             refreshUI();
+            PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 1) + 1);
         }
         
-        PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 0) + 1);
+        
         SceneManager.LoadScene("Level1");       
     }
     public void collectMoney2x()
@@ -161,8 +162,9 @@ public class UIManager : MonoBehaviour
         if(checkUI)
         {
             refreshUI();
+            PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 1) + 1);
         }
-        PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 0) + 1);
+        
         SceneManager.LoadScene("Level1");
     }
 

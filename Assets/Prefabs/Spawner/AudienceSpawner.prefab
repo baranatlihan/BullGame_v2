@@ -50,5 +50,5 @@ MonoBehaviour:
   numberOfToSpawn: 30
   humanTypes:
   - {fileID: 9136766865042950700, guid: c731e914edbd7814d8468d425d34f048, type: 3}
-  - {fileID: 4173138374732009910, guid: 8287d404e7e0fae4588f50378295a0c8, type: 3}
+  - {fileID: 631975816342811967, guid: 539bac639ac2a30428f93a65e3658ee7, type: 3}
   - {fileID: 5101134279133043676, guid: 3a7f096c27e1e7b458538ede0d7e6ed6, type: 3}

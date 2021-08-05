@@ -24,7 +24,8 @@ MonoBehaviour:
   humanTypes:
   - {fileID: 8119906016423251661, guid: 570f5d1b04df0ea4899880cc9d2a29cb, type: 3}
   - {fileID: 5826744472441750280, guid: 381e118f7a9b5a0499d9a85a02de77ad, type: 3}
-  - {fileID: 9143637865725218274, guid: b921d660cd9c00941ae85bf3580dd4a7, type: 3}
-  - {fileID: 9143637865725218274, guid: 7ff5b4aab5799774b931885006fdbbd1, type: 3}
+  - {fileID: 1308737789385916235, guid: 93eef4e8a01e8c54791ff4998e934be5, type: 3}
+  - {fileID: 1308737789385916235, guid: 80d423fd188619844a3275eb2f4363fd, type: 3}
+  - {fileID: 7941305884391849970, guid: 0bcc0598567ef604ea65691cc44a2372, type: 3}
   numberOfHumanToSpawn: 1
   settings: {fileID: 0}

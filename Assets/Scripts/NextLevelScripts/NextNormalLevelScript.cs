@@ -49,19 +49,23 @@ public class NextNormalLevelScript : MonoBehaviour
                 
             }
 
+            else if (scene.name == "ScoreScene")
+            {
+                GameManager.instance.openRewardScreen();
+                GameManager.instance.deadCount = PlayerPrefs.GetInt("totalKillRage", 1);
+
+            }
             else if (scene.name == "RageAttackLevel")
             {
                 PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 0) + 1);
                 PlayerPrefs.SetInt("totalKillRage", GameManager.instance.deadCount);
-
                 SceneManager.LoadScene("ScoreScene");
             }
 
-            else if ((PlayerPrefs.GetInt("sceneCounter", 0) != 0) && (PlayerPrefs.GetInt("sceneCounter", 0) % 5 == 0))
+            else if ((PlayerPrefs.GetInt("sceneCounter", 1) != 0) && (PlayerPrefs.GetInt("sceneCounter", 1) % 5 == 0))
            {
                 PlayerPrefs.SetInt("totalKillBeforeRage", GameManager.instance.deadCount);
                 SceneManager.LoadScene("RageAttackCinema");
-                Debug.Log("SCENE NAME:" + scene.name);
            }                
 
             else if (scene.name == "Level1" && !ScreenChange)
@@ -70,11 +74,7 @@ public class NextNormalLevelScript : MonoBehaviour
                 GameManager.instance.openRewardScreen();
             }
 
-            else if (scene.name == "ScoreScene")
-            {
-                GameManager.instance.deadCount = PlayerPrefs.GetInt("totalKillRage", 0) + PlayerPrefs.GetInt("totalKillBeforeRage", 0);
-                GameManager.instance.openRewardScreen();
-            }
+            
 
         }
     }
