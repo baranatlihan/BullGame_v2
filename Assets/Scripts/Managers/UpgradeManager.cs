@@ -29,6 +29,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
     private string placement = "rewardedVideo";
     private bool testMode = true;
 
+    private PlayerController playerCont;
    
 
 
@@ -60,6 +61,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
     {
         Advertisement.AddListener(this);
         Advertisement.Initialize(gameAndroidId, testMode);
+        playerCont = FindObjectOfType<PlayerController>();
     }
 
     private void OnApplicationPause(bool pause)
@@ -125,7 +127,8 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
             PlayerPrefs.SetInt("wallet", wallet);
 
             speed++;
-            PlayerPrefs.SetInt("speed", hornLength);
+            PlayerPrefs.SetInt("speed", speed);
+            playerCont.speed += speed;
             UIManager.instance.refreshUI();
         }
     }

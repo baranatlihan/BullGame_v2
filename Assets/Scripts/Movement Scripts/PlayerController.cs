@@ -17,7 +17,12 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-   
+
+    private void Start()
+    {
+        speed  = 7 + PlayerPrefs.GetInt("speed", 1);
+    }
+
     void Update()
     {
         if (canMove)
