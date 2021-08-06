@@ -128,7 +128,10 @@ MonoBehaviour:
   - {fileID: 5237191412483790540, guid: 2181a47e51de33a43afb27c16ca81395, type: 3}
   DestroyTime: 5
   EscapeStartTime: 27
-  ExitPoint: {fileID: 6006026841617410415, guid: 5d21bea61d6933e47b6dcb05c461ce79, type: 3}
+  ExitPoint:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!95 &5826744470626154793
 Animator:
   serializedVersion: 3
@@ -3003,8 +3006,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1, z: 0.5}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 1.55, z: 0}
 --- !u!65 &5826744472441750289
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3016,8 +3019,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1, z: 0.5}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 1.55, z: 0}
 --- !u!82 &5826744472441750295
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3152,8 +3155,10 @@ MonoBehaviour:
   - {fileID: 7627445615781581247, guid: 1c4581be0450c224d9e1bfc8eff021d2, type: 3}
   - {fileID: 5237191412483790540, guid: 2181a47e51de33a43afb27c16ca81395, type: 3}
   DestroyTime: 5
-  EscapeStartTime: 27
-  ExitPoint: {fileID: 6006026841617410415, guid: 5d21bea61d6933e47b6dcb05c461ce79, type: 3}
+  EscapeStartTime: 20
+  ExitPoint:
+  - {fileID: 8844164095435904386, guid: efbcced438cef2640bca9d5f71823692, type: 3}
+  - {fileID: 6006026841617410415, guid: 5d21bea61d6933e47b6dcb05c461ce79, type: 3}
 --- !u!195 &5826744472441750292
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class HumanSpawner : MonoBehaviour
     private float nextSpawn = 0f;
     [Tooltip("The time between spawns")]
     public float spawnTime = 5.0f;
+    private int k = 1;
 
     private void Start()
     {
@@ -36,8 +37,17 @@ public class HumanSpawner : MonoBehaviour
 
     private void spawnHumans()
     {
-
         int currentSpawnPointIndex = random.Next(0, spawnerSettings.spawnPoints.Length);
+
+        if(PlayerPrefs.GetInt("sceneCounter", 0) > 12*k)
+        {
+            k++;
+            spawnerSettings.numberOfHumanToSpawn = k;
+            if(k > 5)
+            {
+                k--;
+            }
+        }
 
         for (int i = 0; i < spawnerSettings.numberOfHumanToSpawn; i++)
         {

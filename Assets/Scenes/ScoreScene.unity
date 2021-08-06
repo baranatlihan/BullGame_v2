@@ -3871,7 +3871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c24d79a648cf24eb4a4360b760ab9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelTime: 15
+  LevelTime: 2
 --- !u!4 &1945814907
 Transform:
   m_ObjectHideFlags: 0
@@ -3898,7 +3898,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e7604af2782454c847bcaffe42c6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalLevelSceneCounter: 1
 --- !u!1 &1970205023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7266230149038174467, guid: 1fe7a9f409067df48b9e1e7ea4933d6d, type: 3}

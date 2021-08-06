@@ -8,10 +8,11 @@ public class HumanRunScript : MonoBehaviour
     public GameObject[] Points;
     public float DestroyTime = 5f;
     public float EscapeStartTime = 30f;
-    public GameObject ExitPoint;
+    public GameObject[] ExitPoint;
     private NavMeshAgent nmagent = null;
     private int CurrentRandom, PreviousRandom;
-    
+    private int k = 1;
+    private float controlTime = 0f;
 
 
     private void Start()
@@ -20,10 +21,22 @@ public class HumanRunScript : MonoBehaviour
         nmagent.speed = HumanSettings.speed;
         CurrentRandom = Random.Range(0, Points.Length);
         nmagent.SetDestination(Points[CurrentRandom].transform.position);
+
         
     }
     private void Update()
     {
+        controlTime += Time.deltaTime;
+        Debug.Log(PlayerPrefs.GetInt("sceneCounter", 0));
+        if (PlayerPrefs.GetInt("sceneCounter", 0) > 10 * k)
+        {
+            EscapeStartTime -= 5;
+            if (EscapeStartTime <= 0)
+            {
+                EscapeStartTime = 1;
+            }
+            k++;
+        }
         //Debug.Log("Time: " + Time.time);
         if (nmagent.hasPath == false && nmagent.enabled == true)
         {
@@ -37,11 +50,11 @@ public class HumanRunScript : MonoBehaviour
             Destroy(gameObject, DestroyTime);
         }
 
-
-        if (Time.deltaTime > EscapeStartTime && gameObject.tag == "Enemy" && nmagent.isActiveAndEnabled)
+        //Time.deltaTime
+        if (controlTime > EscapeStartTime && gameObject.CompareTag("Enemy") && nmagent.isActiveAndEnabled)
         {         
             gameObject.tag = "Escaper";
-            nmagent.SetDestination(ExitPoint.transform.position);   
+            nmagent.SetDestination(ExitPoint[Random.Range(0, 2)].transform.position);   
         }
 
         if ((gameObject.tag == "Enemy") && !nmagent.isActiveAndEnabled)
@@ -84,8 +97,8 @@ public class HumanRunScript : MonoBehaviour
         if (nmagent.enabled == true)
         {          
             nmagent.SetDestination(Points[PreviousRandom].transform.position);  
-            nmagent.acceleration = 16;
-            nmagent.speed *= 2;
+            nmagent.acceleration = 14;
+            nmagent.speed *= 1.8f;
 
         }
     }

@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     public GameObject menuScreen;
     public GameObject rewardScreen;
     public GameObject deadScreen;
-
+    public GameObject skinsScreen;
 
 
     [SerializeField]
@@ -25,6 +25,9 @@ public class UIManager : MonoBehaviour
     private Button offlineButton;
     [SerializeField]
     private Button speedButton;
+    [SerializeField]
+    private Button skinsButton;
+
 
     [SerializeField]
     private TextMeshProUGUI hornLengthText;
@@ -179,6 +182,17 @@ public class UIManager : MonoBehaviour
     public void tryAgainButton()
     {
         SceneManager.LoadScene("Level1");
+    }
+
+    public void openSkinsScreen()
+    {
+        Time.timeScale = 0;
+        changeScreen(skinsScreen);
+    }
+
+    public void backButton()
+    {
+        changeScreen(menuScreen);
     }
 
 }

@@ -4658,7 +4658,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2312964903858199895, guid: 9cf641702b7d79347b726c3f858f76bb, type: 3}
       propertyPath: LevelTime
-      value: 15
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2312964903858199895, guid: 9cf641702b7d79347b726c3f858f76bb, type: 3}
       propertyPath: m_Enabled
