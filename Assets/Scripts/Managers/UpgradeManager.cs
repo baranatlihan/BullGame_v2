@@ -30,7 +30,8 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
     private bool testMode = true;
 
     private PlayerController playerCont;
-   
+    private Player player;
+
 
 
     public static UpgradeManager instance;
@@ -62,6 +63,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
         Advertisement.AddListener(this);
         Advertisement.Initialize(gameAndroidId, testMode);
         playerCont = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<Player>();
     }
 
     private void OnApplicationPause(bool pause)
@@ -116,6 +118,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
             hornLength++;
             PlayerPrefs.SetInt("hornLength", hornLength);
             UIManager.instance.refreshUI();
+            player.hornUpdate();
         }
     }
 
