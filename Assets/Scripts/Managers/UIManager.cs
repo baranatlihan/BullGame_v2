@@ -17,7 +17,8 @@ public class UIManager : MonoBehaviour
     public GameObject rewardScreen;
     public GameObject deadScreen;
     public GameObject skinsScreen;
-
+    public GameObject bullPlayer;
+    public GameObject NotEnoughGoldText;
 
     [SerializeField]
     private Button hornLengthButton;
@@ -42,7 +43,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI gainedGoldText;
 
-
+    private int wallet;
+    Scene scene;
 
     public static UIManager instance;
     [SerializeField]
@@ -59,19 +61,26 @@ public class UIManager : MonoBehaviour
             UIManager.instance = this;
         }
 
+        wallet = PlayerPrefs.GetInt("wallet", 0);
         currentScreen = menuScreen;
+
     }
 
     private void Start()
     {
-        if(checkUI)
+        scene = SceneManager.GetActiveScene();
+        if (scene.name != "ScoreScene") { 
+        bullPlayer.GetComponent<SkinnedMeshRenderer>().material = bullPlayer.GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 0)];
+        
+
+        if (checkUI)
         {
             refreshUI();
             currentScreen = menuScreen;
             gameScreen.SetActive(false);
             Time.timeScale = 0;
         }
-        
+        }
     }
 
     public void refreshUI()
@@ -136,8 +145,10 @@ public class UIManager : MonoBehaviour
 
     public void rewardScreenMoney(int deadCount)
     {
+       
         UpgradeManager.instance.totalGainFromKills = deadCount; 
         gainedGoldText.text = ("Earned " + deadCount + " gold");
+
     }
 
 
@@ -194,5 +205,69 @@ public class UIManager : MonoBehaviour
     {
         changeScreen(menuScreen);
     }
+
+    public void BlueSkinButton()
+    {
+        if (wallet >= 1)
+        {
+            wallet -= 1;
+            PlayerPrefs.SetInt("wallet", wallet);
+            PlayerPrefs.SetInt("currentSkin", 1);
+            UIManager.instance.refreshUI();
+        }
+        else
+        {
+            NotEnoughGoldText.SetActive(true);
+        }
+
+    }
+
+    public void CowSkinButton()
+    {
+        if (wallet >= 1)
+        {
+            wallet -= 1;
+            PlayerPrefs.SetInt("wallet", wallet);
+            PlayerPrefs.SetInt("currentSkin", 2);
+            UIManager.instance.refreshUI();
+        }
+        else
+        {
+            NotEnoughGoldText.SetActive(true);
+        }
+
+    }
+
+    public void KitsuneSkinButton()
+    {
+        if (wallet >= 1)
+        {
+            wallet -= 1;
+            PlayerPrefs.SetInt("wallet", wallet);
+            PlayerPrefs.SetInt("currentSkin", 3);
+            UIManager.instance.refreshUI();
+        }
+        else
+        {
+            NotEnoughGoldText.SetActive(true);
+        }
+    }
+
+    public void PinkSkinButton()
+    {
+        if (wallet >= 1)
+        {
+            wallet -= 1;
+            PlayerPrefs.SetInt("wallet", wallet);
+            PlayerPrefs.SetInt("currentSkin", 4);
+            UIManager.instance.refreshUI();   
+        }
+        else
+        {
+            NotEnoughGoldText.SetActive(true);
+        }
+    }
+
+
 
 }

@@ -172,12 +172,18 @@ MonoBehaviour:
   gameScreen: {fileID: 0}
   menuScreen: {fileID: 0}
   rewardScreen: {fileID: 0}
+  deadScreen: {fileID: 0}
+  skinsScreen: {fileID: 0}
+  bullPlayer: {fileID: 0}
+  NotEnoughGoldText: {fileID: 0}
   hornLengthButton: {fileID: 0}
   offlineButton: {fileID: 0}
   speedButton: {fileID: 0}
+  skinsButton: {fileID: 0}
   hornLengthText: {fileID: 0}
   offlineText: {fileID: 0}
   offlinePerHourText: {fileID: 0}
   speedText: {fileID: 0}
   goldText: {fileID: 0}
   gainedGoldText: {fileID: 0}
+  checkUI: 1

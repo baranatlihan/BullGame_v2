@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 {
 
@@ -31,7 +31,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
     private PlayerController playerCont;
     private Player player;
-
+    Scene scene;
 
 
     public static UpgradeManager instance;
@@ -87,8 +87,10 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
                 }
                 else
                 {
+                    if (scene.name != "ScoreScene") {
                     UIManager.instance.refreshUI();
                     UIManager.instance.changeScreen(UIManager.instance.menuScreen);
+                    }
                 }
                
             }

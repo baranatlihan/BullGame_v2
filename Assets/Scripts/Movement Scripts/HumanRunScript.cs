@@ -27,7 +27,6 @@ public class HumanRunScript : MonoBehaviour
     private void Update()
     {
         controlTime += Time.deltaTime;
-        Debug.Log(PlayerPrefs.GetInt("sceneCounter", 0));
         if (PlayerPrefs.GetInt("sceneCounter", 0) > 10 * k)
         {
             EscapeStartTime -= 5;
