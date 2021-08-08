@@ -5370,6 +5370,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 63954628, guid: 2fea5993a9c37d846b947b831de934e0, type: 3}
+      propertyPath: m_text
+      value: Kitsune\n150
+      objectReference: {fileID: 0}
+    - target: {fileID: 87445359, guid: 2fea5993a9c37d846b947b831de934e0, type: 3}
+      propertyPath: m_text
+      value: Blue\n50
+      objectReference: {fileID: 0}
+    - target: {fileID: 235738854, guid: 2fea5993a9c37d846b947b831de934e0, type: 3}
+      propertyPath: m_text
+      value: Pink\n100
+      objectReference: {fileID: 0}
     - target: {fileID: 302498035, guid: 2fea5993a9c37d846b947b831de934e0, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5383,6 +5395,10 @@ PrefabInstance:
       value: 'Default Skin
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033731926, guid: 2fea5993a9c37d846b947b831de934e0, type: 3}
+      propertyPath: m_text
+      value: Cow\n125
       objectReference: {fileID: 0}
     - target: {fileID: 1147007835, guid: 2fea5993a9c37d846b947b831de934e0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
