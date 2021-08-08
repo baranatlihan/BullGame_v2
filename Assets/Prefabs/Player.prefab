@@ -409,7 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3426235175122485014, guid: c121d42362750694b8a46de4daa9920a, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3426235175122485014, guid: c121d42362750694b8a46de4daa9920a, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -430,14 +430,14 @@ PrefabInstance:
     - target: {fileID: 3426235175122485014, guid: c121d42362750694b8a46de4daa9920a, type: 3}
       propertyPath: m_Materials.Array.data[5]
       value: 
-      objectReference: {fileID: 2100000, guid: 7a4a57f206badfd4397357c19984b2e6, type: 2}
+      objectReference: {fileID: 2100000, guid: 1583caf0746776e4b9c344729102e4de, type: 2}
     - target: {fileID: 4736969529441530775, guid: c121d42362750694b8a46de4daa9920a, type: 3}
       propertyPath: m_Name
       value: BullHornSkin
       objectReference: {fileID: 0}
     - target: {fileID: 6082879946270045664, guid: c121d42362750694b8a46de4daa9920a, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6082879946270045664, guid: c121d42362750694b8a46de4daa9920a, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -458,7 +458,7 @@ PrefabInstance:
     - target: {fileID: 6082879946270045664, guid: c121d42362750694b8a46de4daa9920a, type: 3}
       propertyPath: m_Materials.Array.data[5]
       value: 
-      objectReference: {fileID: 2100000, guid: 7a4a57f206badfd4397357c19984b2e6, type: 2}
+      objectReference: {fileID: 2100000, guid: 1583caf0746776e4b9c344729102e4de, type: 2}
     - target: {fileID: 8107531350199328621, guid: c121d42362750694b8a46de4daa9920a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.18

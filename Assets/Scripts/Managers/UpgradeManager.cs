@@ -28,6 +28,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
     public GameObject NotEnoughGoldText;
     public GameObject BullSkin;
     public GameObject BullHornSkin;
+    public Material[] mats;
 
 
     private string gameAndroidId = "4243503";
@@ -46,7 +47,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
     {
         if (UpgradeManager.instance)
         {
-            UnityEngine.Object.Destroy(gameObject);
+            //UnityEngine.Object.Destroy(gameObject);
         }
         else
         {
@@ -62,8 +63,9 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
         wallet = PlayerPrefs.GetInt("wallet", 0);
 
 
-        BullSkin.GetComponent<SkinnedMeshRenderer>().material = BullSkin.GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 0)]; //***
-        BullHornSkin.GetComponent<MeshRenderer>().material = BullHornSkin.GetComponent<MeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 0)];
+
+        BullSkin.GetComponent<SkinnedMeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 0)]; 
+        BullHornSkin.GetComponent<MeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 0)]; 
 
     }
 
@@ -151,9 +153,9 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
     public void BuyOffline()
     {
-        if (wallet >= offline * 10)
+        if (wallet >= offline * 1)
         {
-            wallet -= hornLength * 10;
+            wallet -= hornLength * 1;
             PlayerPrefs.SetInt("wallet", wallet);
 
             offline++;
@@ -207,30 +209,29 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
     public void DefaultSkinButton()
     {
-        if (wallet >= 1)
-        {
-            wallet -= 1;
-            PlayerPrefs.SetInt("wallet", wallet);
-            PlayerPrefs.SetInt("currentSkin", 0);
-            GetComponent<SkinnedMeshRenderer>().material = GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 0)];
-            GetComponent<MeshRenderer>().material = GetComponent<MeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 0)];
-            UIManager.instance.refreshUI();
-        }
-        else
-        {
-            NotEnoughGoldText.SetActive(true);
-        }
-
+        PlayerPrefs.SetInt("currentSkin", 0);
+        BullSkin.GetComponent<SkinnedMeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 0)];
+        BullHornSkin.GetComponent<MeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 0)];
+        UIManager.instance.refreshUI();
     }
+
     public void BlueSkinButton()
     {
-        if (wallet >= 1)
+        if (PlayerPrefs.GetString("blueSkin", "false") == "true")
         {
-            wallet -= 1;
+            PlayerPrefs.SetInt("currentSkin", 1);
+            BullSkin.GetComponent<SkinnedMeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 1)];
+            BullHornSkin.GetComponent<MeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 1)];
+            UIManager.instance.refreshUI();
+        }
+        else if (wallet >= 50)
+        {
+            wallet -= 50;
             PlayerPrefs.SetInt("wallet", wallet);
             PlayerPrefs.SetInt("currentSkin", 1);
-            BullSkin.GetComponent<SkinnedMeshRenderer>().material = BullSkin.GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 1)];
-            BullHornSkin.GetComponent<MeshRenderer>().material = BullHornSkin.GetComponent<MeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 1)];
+            BullSkin.GetComponent<SkinnedMeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 1)];
+            BullHornSkin.GetComponent<MeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 1)];
+            PlayerPrefs.SetString("blueSkin", "true");
             UIManager.instance.refreshUI();
         }
         else
@@ -242,13 +243,21 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
     public void CowSkinButton()
     {
-        if (wallet >= 1)
+        if (PlayerPrefs.GetString("cowSkin", "false") == "true")
         {
-            wallet -= 1;
+            PlayerPrefs.SetInt("currentSkin", 2);
+            BullSkin.GetComponent<SkinnedMeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 2)];
+            BullHornSkin.GetComponent<MeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 2)];
+            UIManager.instance.refreshUI();
+        }
+        else if (wallet >= 125)
+        {
+            wallet -= 125;
             PlayerPrefs.SetInt("wallet", wallet);
             PlayerPrefs.SetInt("currentSkin", 2);
-            BullSkin.GetComponent<SkinnedMeshRenderer>().material = BullSkin.GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 2)];
-            BullHornSkin.GetComponent<MeshRenderer>().material = BullHornSkin.GetComponent<MeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 2)];
+            BullSkin.GetComponent<SkinnedMeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 2)];
+            BullHornSkin.GetComponent<MeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 2)];
+            PlayerPrefs.SetString("cowSkin", "true");
             UIManager.instance.refreshUI();
         }
         else
@@ -260,13 +269,21 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
     public void KitsuneSkinButton()
     {
-        if (wallet >= 1)
+        if (PlayerPrefs.GetString("kitsuneSkin", "false") == "true")
         {
-            wallet -= 1;
+            PlayerPrefs.SetInt("currentSkin", 3);
+            BullSkin.GetComponent<SkinnedMeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 3)];
+            BullHornSkin.GetComponent<MeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 3)];
+            UIManager.instance.refreshUI();
+        }
+        else if (wallet >= 150)
+        {
+            wallet -= 150;
             PlayerPrefs.SetInt("wallet", wallet);
             PlayerPrefs.SetInt("currentSkin", 3);
-            BullSkin.GetComponent<SkinnedMeshRenderer>().material = BullSkin.GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 3)];
-            BullHornSkin.GetComponent<MeshRenderer>().material = BullHornSkin.GetComponent<MeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 3)];
+            BullSkin.GetComponent<SkinnedMeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin",3)];
+            BullHornSkin.GetComponent<MeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 3)];
+            PlayerPrefs.SetString("kitsuneSkin", "true");
             UIManager.instance.refreshUI();
         }
         else
@@ -277,21 +294,27 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
     public void PinkSkinButton()
     {
-        if (wallet >= 1)
+        if(PlayerPrefs.GetString("pinkSkin", "false") == "true")
         {
-            wallet -= 1;
+            PlayerPrefs.SetInt("currentSkin", 4);
+            BullSkin.GetComponent<SkinnedMeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 4)];
+            BullHornSkin.GetComponent<MeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 4)];
+            UIManager.instance.refreshUI();
+        }
+        else if (wallet >= 100)
+        {
+            wallet -= 100;
             PlayerPrefs.SetInt("wallet", wallet);
             PlayerPrefs.SetInt("currentSkin", 4);
-            BullSkin.GetComponent<SkinnedMeshRenderer>().material = BullSkin.GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 4)];
-            BullHornSkin.GetComponent<MeshRenderer>().material = BullHornSkin.GetComponent<MeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 4)];
+            BullSkin.GetComponent<SkinnedMeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 4)];
+            BullHornSkin.GetComponent<MeshRenderer>().material = mats[PlayerPrefs.GetInt("currentSkin", 4)];
+            PlayerPrefs.SetString("pinkSkin", "true");
             UIManager.instance.refreshUI();
+
         }
         else
         {
             NotEnoughGoldText.SetActive(true);
         }
     }
-
-    
-    
 }

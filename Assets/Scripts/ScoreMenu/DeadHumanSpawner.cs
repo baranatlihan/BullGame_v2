@@ -23,7 +23,7 @@ public class DeadHumanSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawnHumans((PlayerPrefs.GetInt("totalKillRage", 0) + PlayerPrefs.GetInt("totalKillBeforeRage", 0)) * 5,100));
+        StartCoroutine(spawnHumans((PlayerPrefs.GetInt("totalKillRage", 0) + PlayerPrefs.GetInt("totalKillBeforeRage", 0)) * 2,100));
     }
 
     // Update is called once per frame

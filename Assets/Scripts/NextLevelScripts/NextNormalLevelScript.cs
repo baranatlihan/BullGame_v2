@@ -15,26 +15,26 @@ public class NextNormalLevelScript : MonoBehaviour
         if (scene.name == "RageAttackCinema")
         {
             Time.timeScale = 1;        
-        }     
+        }
 
-        if (scene.name == "ScoreScene")
-        {
-            Debug.Log("Scene name: " + scene.name);
-        }
-        else if (scene.name == "Level1")
-        {
-            Debug.Log("Scene name: " + scene.name);
-        }
-        else if (scene.name == "RageAttackLevel")
-        {
-            Debug.Log("\nScene name: " + scene.name);
-        }
-        else
-        {
-            Time.timeScale = 1;
-            Debug.Log("\nScene name: " + scene.name);
-        }
-            
+        /* if (scene.name == "ScoreScene")
+         {
+             Debug.Log("Scene name: " + scene.name);
+         }
+         else if (scene.name == "Level1")
+         {
+             Debug.Log("Scene name: " + scene.name);
+         }
+         else if (scene.name == "RageAttackLevel")
+         {
+             Debug.Log("\nScene name: " + scene.name);
+         }
+         else
+         {
+             Time.timeScale = 1;
+             Debug.Log("\nScene name: " + scene.name);
+         }*/
+
     }
 
     public void Update()

@@ -44,6 +44,15 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI gainedGoldText;
     [SerializeField]
     private TextMeshProUGUI skinsGoldText;
+    [SerializeField]
+    private TextMeshProUGUI pinkSkinText;
+    [SerializeField]
+    private TextMeshProUGUI cowSkinText;
+    [SerializeField]
+    private TextMeshProUGUI blueSkinText;
+    [SerializeField]
+    private TextMeshProUGUI kitsuneSkinText;
+
 
     private int wallet;
     Scene scene;
@@ -127,6 +136,25 @@ public class UIManager : MonoBehaviour
             offlineButton.interactable = false;
         }
 
+        if (PlayerPrefs.GetString("pinkSkin", "false") == "true")
+        {
+            pinkSkinText.text = "Pink";
+        }
+
+        if (PlayerPrefs.GetString("cowSkin", "false") == "true")
+        {
+            cowSkinText.text = "Cow";
+        }
+
+        if (PlayerPrefs.GetString("blueSkin", "false") == "true")
+        {
+            blueSkinText.text = "Blue";
+        }
+        if (PlayerPrefs.GetString("kitsuneSkin", "false") == "true")
+        {
+            kitsuneSkinText.text = "Kitsune";
+        }
+
 
     }
 
@@ -164,7 +192,7 @@ public class UIManager : MonoBehaviour
         if (checkUI)
         {
             refreshUI();
-            PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 2) + 1); //?
+            PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 2) + 1); 
         }
         
         
@@ -209,5 +237,4 @@ public class UIManager : MonoBehaviour
         refreshUI();
         changeScreen(menuScreen);
     }
-
 }
