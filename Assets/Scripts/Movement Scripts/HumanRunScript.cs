@@ -13,7 +13,7 @@ public class HumanRunScript : MonoBehaviour
     private int CurrentRandom, PreviousRandom;
     private int k = 1;
     private float controlTime = 0f;
-
+    private float rotationSpeed = 1.5f;
 
     private void Start()
     {
@@ -22,12 +22,12 @@ public class HumanRunScript : MonoBehaviour
         CurrentRandom = Random.Range(0, Points.Length);
         nmagent.SetDestination(Points[CurrentRandom].transform.position);
 
-        
+
     }
     private void Update()
     {
         controlTime += Time.deltaTime;
-        if (PlayerPrefs.GetInt("sceneCounter", 0) > 10 * k)
+        if (PlayerPrefs.GetInt("sceneCounter", 2) > 10 * k)
         {
             EscapeStartTime -= 5;
             if (EscapeStartTime <= 0)
@@ -45,15 +45,15 @@ public class HumanRunScript : MonoBehaviour
         }
 
         if (gameObject.tag == "Dead")
-        {          
+        {
             Destroy(gameObject, DestroyTime);
         }
 
         //Time.deltaTime
         if (controlTime > EscapeStartTime && gameObject.CompareTag("Enemy") && nmagent.isActiveAndEnabled)
-        {         
+        {
             gameObject.tag = "Escaper";
-            nmagent.SetDestination(ExitPoint[Random.Range(0, 2)].transform.position);   
+            nmagent.SetDestination(ExitPoint[Random.Range(0, 2)].transform.position);
         }
 
         if ((gameObject.tag == "Enemy") && !nmagent.isActiveAndEnabled)
@@ -68,11 +68,11 @@ public class HumanRunScript : MonoBehaviour
 
 
         if (gameObject.tag == "Escaper" && nmagent.remainingDistance <= 0.15f)
-        {            
+        {
             Destroy(gameObject);
         }
     }
-    
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
@@ -94,17 +94,29 @@ public class HumanRunScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (nmagent.enabled == true)
-        {          
-            nmagent.SetDestination(Points[PreviousRandom].transform.position);  
+        {
+            nmagent.SetDestination(Points[PreviousRandom].transform.position);
             nmagent.acceleration = 14;
             nmagent.speed *= 1.8f;
+            extraRotation();
 
         }
     }
     private void OnTriggerExit(Collider other)
+        {
+            nmagent.speed = HumanSettings.speed;
+            nmagent.acceleration = 8;
+            
+        }
+
+    void extraRotation()
     {
-        nmagent.speed = HumanSettings.speed;
+        Vector3 lookrotation = nmagent.steeringTarget - transform.position;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), rotationSpeed * Time.deltaTime);
     }
 
-    
 }
+
+ 
+   
+

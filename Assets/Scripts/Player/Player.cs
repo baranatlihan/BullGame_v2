@@ -24,9 +24,9 @@ public class Player : MonoBehaviour
 
     public void hornUpdate()
     {
-        horns.transform.localScale += new Vector3(PlayerPrefs.GetInt("hornLength", 1) * 0.5f, 0, 0);
-        hornConnect.transform.localScale += new Vector3(0, 0, PlayerPrefs.GetInt("hornLength", 1) * 0.4f);
-        hornCollider.size += new Vector3(PlayerPrefs.GetInt("hornLength", 1) * 0.5f, 0, 0);
+        horns.transform.localScale += new Vector3(PlayerPrefs.GetInt("hornLength", 1) * 0.1f, 0, 0);
+        hornConnect.transform.localScale += new Vector3(0, 0, PlayerPrefs.GetInt("hornLength", 1) * 0.08f);
+        hornCollider.size += new Vector3(PlayerPrefs.GetInt("hornLength", 1) * 0.1f, 0, 0);
     }
    
 }

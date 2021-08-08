@@ -527,6 +527,7 @@ GameObject:
   - component: {fileID: 8119906016423251667}
   - component: {fileID: 8119906016423251664}
   - component: {fileID: 8119906016423251665}
+  - component: {fileID: 814399093}
   m_Layer: 0
   m_Name: ParentBoy
   m_TagString: Enemy
@@ -558,13 +559,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8119906016423251661}
   serializedVersion: 2
-  m_Mass: 0.1
+  m_Mass: 5
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.02
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!65 &8119906016423251671
 BoxCollider:
@@ -575,7 +576,7 @@ BoxCollider:
   m_GameObject: {fileID: 8119906016423251661}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 3, z: 1}
   m_Center: {x: 0, y: 1.55, z: 0}
@@ -725,8 +726,8 @@ MonoBehaviour:
   - {fileID: 5106582279473814065, guid: c6bc08bc08f704e4a8473004f07a085e, type: 3}
   - {fileID: 7627445615781581247, guid: 1c4581be0450c224d9e1bfc8eff021d2, type: 3}
   - {fileID: 5237191412483790540, guid: 2181a47e51de33a43afb27c16ca81395, type: 3}
-  DestroyTime: 2
-  EscapeStartTime: 20
+  DestroyTime: 3
+  EscapeStartTime: 15
   ExitPoint:
   - {fileID: 6006026841617410415, guid: 5d21bea61d6933e47b6dcb05c461ce79, type: 3}
   - {fileID: 8844164095435904386, guid: efbcced438cef2640bca9d5f71823692, type: 3}
@@ -739,7 +740,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8119906016423251661}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.25
+  m_Radius: 0.71
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -748,10 +749,24 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1
+  m_Height: 3.03
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &814399093
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8119906016423251661}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.55
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.5, z: -0.09}
 --- !u!1 &8119906016628086267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,7 +1331,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8119906015703398360}
   - component: {fileID: 8119906017627859303}
-  - component: {fileID: 8119906017627859302}
   - component: {fileID: 8119906017627859297}
   - component: {fileID: 8119906017627859299}
   - component: {fileID: 8119906017627859293}
@@ -1357,22 +1371,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!54 &8119906017627859302
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8119906017627859295}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!195 &8119906017627859297
 NavMeshAgent:
   m_ObjectHideFlags: 0

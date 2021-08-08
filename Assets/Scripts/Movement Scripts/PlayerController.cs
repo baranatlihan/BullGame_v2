@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        speed  = 7 + PlayerPrefs.GetInt("speed", 1);
+        speed = 3 + PlayerPrefs.GetInt("speed", 1);
+
     }
 
     void Update()

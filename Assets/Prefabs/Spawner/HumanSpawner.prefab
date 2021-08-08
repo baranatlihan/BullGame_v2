@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnerSettings: {fileID: 11400000, guid: 608c978d1330a8b47a6b964d47ce54e2, type: 2}
-  totalSpawnTime: 28
-  spawnTime: 1
+  totalSpawnTime: 22
+  spawnTime: 4
 --- !u!114 &-2312964903858199895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c24d79a648cf24eb4a4360b760ab9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelTime: 30
+  LevelTime: 2
 --- !u!114 &1897226395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,4 +89,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e7604af2782454c847bcaffe42c6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalLevelSceneCounter: 1

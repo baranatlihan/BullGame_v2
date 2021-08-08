@@ -57,12 +57,12 @@ public class NextNormalLevelScript : MonoBehaviour
             }
             else if (scene.name == "RageAttackLevel")
             {
-                PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 0) + 1);
+                PlayerPrefs.SetInt("sceneCounter", PlayerPrefs.GetInt("sceneCounter", 2) + 1);
                 PlayerPrefs.SetInt("totalKillRage", GameManager.instance.deadCount);
                 SceneManager.LoadScene("ScoreScene");
             }
 
-            else if ((PlayerPrefs.GetInt("sceneCounter", 1) != 0) && (PlayerPrefs.GetInt("sceneCounter", 1) % 5 == 0))
+            else if ((PlayerPrefs.GetInt("sceneCounter", 2) != 0) && (PlayerPrefs.GetInt("sceneCounter", 2) % 7 == 0))
            {
                 PlayerPrefs.SetInt("totalKillBeforeRage", GameManager.instance.deadCount);
                 SceneManager.LoadScene("RageAttackCinema");

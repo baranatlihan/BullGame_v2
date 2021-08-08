@@ -49,6 +49,9 @@ MonoBehaviour:
   wallet: 0
   totalGain: 0
   totalGainFromKills: 0
+  NotEnoughGoldText: {fileID: 0}
+  BullSkin: {fileID: 0}
+  BullHornSkin: {fileID: 0}
 --- !u!1 &913354590023640069
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,8 +177,6 @@ MonoBehaviour:
   rewardScreen: {fileID: 0}
   deadScreen: {fileID: 0}
   skinsScreen: {fileID: 0}
-  bullPlayer: {fileID: 0}
-  NotEnoughGoldText: {fileID: 0}
   hornLengthButton: {fileID: 0}
   offlineButton: {fileID: 0}
   speedButton: {fileID: 0}
@@ -186,4 +187,5 @@ MonoBehaviour:
   speedText: {fileID: 0}
   goldText: {fileID: 0}
   gainedGoldText: {fileID: 0}
+  skinsGoldText: {fileID: 0}
   checkUI: 1

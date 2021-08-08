@@ -25,6 +25,11 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
     //[HideInInspector]
     public int totalGainFromKills = 0;
 
+    public GameObject NotEnoughGoldText;
+    public GameObject BullSkin;
+    public GameObject BullHornSkin;
+
+
     private string gameAndroidId = "4243503";
     private string placement = "rewardedVideo";
     private bool testMode = true;
@@ -54,7 +59,11 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
         speed = PlayerPrefs.GetInt("speed", 1);
 
-        wallet = PlayerPrefs.GetInt("wallet", 0); 
+        wallet = PlayerPrefs.GetInt("wallet", 0);
+
+
+        BullSkin.GetComponent<SkinnedMeshRenderer>().material = BullSkin.GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 0)]; //***
+        BullHornSkin.GetComponent<MeshRenderer>().material = BullHornSkin.GetComponent<MeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 0)];
 
     }
 
@@ -64,6 +73,8 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
         Advertisement.Initialize(gameAndroidId, testMode);
         playerCont = FindObjectOfType<PlayerController>();
         player = FindObjectOfType<Player>();
+
+        
     }
 
     private void OnApplicationPause(bool pause)
@@ -133,7 +144,7 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
             speed++;
             PlayerPrefs.SetInt("speed", speed);
-            playerCont.speed += speed;
+            //playerCont.speed += speed;
             UIManager.instance.refreshUI();
         }
     }
@@ -193,5 +204,94 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
         //throw new System.NotImplementedException();
     }
 
-   
+
+    public void DefaultSkinButton()
+    {
+        if (wallet >= 1)
+        {
+            wallet -= 1;
+            PlayerPrefs.SetInt("wallet", wallet);
+            PlayerPrefs.SetInt("currentSkin", 0);
+            GetComponent<SkinnedMeshRenderer>().material = GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 0)];
+            GetComponent<MeshRenderer>().material = GetComponent<MeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 0)];
+            UIManager.instance.refreshUI();
+        }
+        else
+        {
+            NotEnoughGoldText.SetActive(true);
+        }
+
+    }
+    public void BlueSkinButton()
+    {
+        if (wallet >= 1)
+        {
+            wallet -= 1;
+            PlayerPrefs.SetInt("wallet", wallet);
+            PlayerPrefs.SetInt("currentSkin", 1);
+            BullSkin.GetComponent<SkinnedMeshRenderer>().material = BullSkin.GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 1)];
+            BullHornSkin.GetComponent<MeshRenderer>().material = BullHornSkin.GetComponent<MeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 1)];
+            UIManager.instance.refreshUI();
+        }
+        else
+        {
+            NotEnoughGoldText.SetActive(true);
+        }
+
+    }
+
+    public void CowSkinButton()
+    {
+        if (wallet >= 1)
+        {
+            wallet -= 1;
+            PlayerPrefs.SetInt("wallet", wallet);
+            PlayerPrefs.SetInt("currentSkin", 2);
+            BullSkin.GetComponent<SkinnedMeshRenderer>().material = BullSkin.GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 2)];
+            BullHornSkin.GetComponent<MeshRenderer>().material = BullHornSkin.GetComponent<MeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 2)];
+            UIManager.instance.refreshUI();
+        }
+        else
+        {
+            NotEnoughGoldText.SetActive(true);
+        }
+
+    }
+
+    public void KitsuneSkinButton()
+    {
+        if (wallet >= 1)
+        {
+            wallet -= 1;
+            PlayerPrefs.SetInt("wallet", wallet);
+            PlayerPrefs.SetInt("currentSkin", 3);
+            BullSkin.GetComponent<SkinnedMeshRenderer>().material = BullSkin.GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 3)];
+            BullHornSkin.GetComponent<MeshRenderer>().material = BullHornSkin.GetComponent<MeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 3)];
+            UIManager.instance.refreshUI();
+        }
+        else
+        {
+            NotEnoughGoldText.SetActive(true);
+        }
+    }
+
+    public void PinkSkinButton()
+    {
+        if (wallet >= 1)
+        {
+            wallet -= 1;
+            PlayerPrefs.SetInt("wallet", wallet);
+            PlayerPrefs.SetInt("currentSkin", 4);
+            BullSkin.GetComponent<SkinnedMeshRenderer>().material = BullSkin.GetComponent<SkinnedMeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 4)];
+            BullHornSkin.GetComponent<MeshRenderer>().material = BullHornSkin.GetComponent<MeshRenderer>().materials[PlayerPrefs.GetInt("currentSkin", 4)];
+            UIManager.instance.refreshUI();
+        }
+        else
+        {
+            NotEnoughGoldText.SetActive(true);
+        }
+    }
+
+    
+    
 }

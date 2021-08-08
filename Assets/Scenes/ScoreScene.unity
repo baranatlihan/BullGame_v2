@@ -2494,12 +2494,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 913354589852736824, guid: 784a4974e2967084f9f21db75f9f4a7f, type: 3}
+      propertyPath: BullSkin
+      value: 
+      objectReference: {fileID: 1756232887}
+    - target: {fileID: 913354589852736824, guid: 784a4974e2967084f9f21db75f9f4a7f, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 913354589852736824, guid: 784a4974e2967084f9f21db75f9f4a7f, type: 3}
+      propertyPath: bullPlayer
+      value: 
+      objectReference: {fileID: 1756232887}
+    - target: {fileID: 913354589852736824, guid: 784a4974e2967084f9f21db75f9f4a7f, type: 3}
+      propertyPath: BullHornSkin
+      value: 
+      objectReference: {fileID: 1756232886}
+    - target: {fileID: 913354589852736824, guid: 784a4974e2967084f9f21db75f9f4a7f, type: 3}
+      propertyPath: bullHornPlayer
+      value: 
+      objectReference: {fileID: 1756232886}
     - target: {fileID: 913354589852736825, guid: 784a4974e2967084f9f21db75f9f4a7f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 913354590023640069, guid: 784a4974e2967084f9f21db75f9f4a7f, type: 3}
       propertyPath: m_IsActive
@@ -2613,6 +2629,10 @@ PrefabInstance:
       propertyPath: offlineButton
       value: 
       objectReference: {fileID: 447687263}
+    - target: {fileID: 913354591210344923, guid: 784a4974e2967084f9f21db75f9f4a7f, type: 3}
+      propertyPath: skinsGoldText
+      value: 
+      objectReference: {fileID: 1204757889}
     - target: {fileID: 913354591210344923, guid: 784a4974e2967084f9f21db75f9f4a7f, type: 3}
       propertyPath: gainedGoldText
       value: 
@@ -2848,6 +2868,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fea5993a9c37d846b947b831de934e0, type: 3}
+--- !u!114 &1204757889 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1199288174, guid: 2fea5993a9c37d846b947b831de934e0, type: 3}
+  m_PrefabInstance: {fileID: 1204757888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1228638216
 GameObject:
   m_ObjectHideFlags: 0
@@ -3756,6 +3787,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2614781462120472528, guid: e19fdf64796a6c34d85f285507cc2156, type: 3}
   m_PrefabInstance: {fileID: 1756232884}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1756232886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9093062023817417987, guid: e19fdf64796a6c34d85f285507cc2156, type: 3}
+  m_PrefabInstance: {fileID: 1756232884}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1756232887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3791532373598808811, guid: e19fdf64796a6c34d85f285507cc2156, type: 3}
+  m_PrefabInstance: {fileID: 1756232884}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1797941752
 GameObject:
   m_ObjectHideFlags: 0
@@ -4307,7 +4348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c24d79a648cf24eb4a4360b760ab9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelTime: 15
+  LevelTime: 12
 --- !u!4 &1945814907
 Transform:
   m_ObjectHideFlags: 0

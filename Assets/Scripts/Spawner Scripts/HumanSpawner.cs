@@ -12,20 +12,41 @@ public class HumanSpawner : MonoBehaviour
     public float totalSpawnTime = 30f; 
     private float nextSpawn = 0f;
     [Tooltip("The time between spawns")]
-    public float spawnTime = 5.0f;
-    private int k = 1;
+    public float spawnTime = 4.0f;
 
     private void Start()
     {
         nextSpawn = 0f;
+        PlayerPrefs.SetInt("numberOfSpawn", spawnerSettings.numberOfHumanToSpawn);
     }
     void Update()
     {
 
+
         nextSpawn += Time.deltaTime;
+        
+        if (PlayerPrefs.GetInt("sceneCounter", 2) % 7 == 0)
+        {
 
+            PlayerPrefs.SetFloat("SpawnTime", PlayerPrefs.GetFloat("SpawnTime", 4) - 1);
 
-        if (nextSpawn > spawnTime && Time.deltaTime <= totalSpawnTime)
+            if (PlayerPrefs.GetFloat("SpawnTime", 4) < 2)
+            {
+                PlayerPrefs.SetFloat("SpawnTime", 1.5f);
+            }
+        }
+
+        if (PlayerPrefs.GetInt("sceneCounter", 2) % 14 == 0)
+        {
+            PlayerPrefs.SetInt("numberOfSpawn", PlayerPrefs.GetInt("numberOfSpawn", 1) + 1);
+            spawnerSettings.numberOfHumanToSpawn = PlayerPrefs.GetInt("numberOfSpawn", 1);
+            if (PlayerPrefs.GetInt("numberOfSpawn", 1) > 5)
+            {
+                PlayerPrefs.SetInt("numberOfSpawn", 5);
+            }
+        }
+
+        if (nextSpawn > PlayerPrefs.GetFloat("SpawnTime", 4) && Time.deltaTime <= totalSpawnTime)
         {
             spawnHumans();
             nextSpawn = 0f;
@@ -37,17 +58,7 @@ public class HumanSpawner : MonoBehaviour
 
     private void spawnHumans()
     {
-        int currentSpawnPointIndex = random.Next(0, spawnerSettings.spawnPoints.Length);
-
-        if(PlayerPrefs.GetInt("sceneCounter", 0) > 12*k)
-        {
-            k++;
-            spawnerSettings.numberOfHumanToSpawn = k;
-            if(k > 5)
-            {
-                k--;
-            }
-        }
+        int currentSpawnPointIndex = random.Next(0, spawnerSettings.spawnPoints.Length);   
 
         for (int i = 0; i < spawnerSettings.numberOfHumanToSpawn; i++)
         {
