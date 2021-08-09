@@ -146,16 +146,16 @@ public class UpgradeManager : MonoBehaviour, IUnityAdsListener
 
             speed++;
             PlayerPrefs.SetInt("speed", speed);
-            //playerCont.speed += speed;
+            playerCont.speed = 3 + speed;
             UIManager.instance.refreshUI();
         }
     }
 
     public void BuyOffline()
     {
-        if (wallet >= offline * 1)
+        if (wallet >= offline * 10)
         {
-            wallet -= hornLength * 1;
+            wallet -= hornLength * 10;
             PlayerPrefs.SetInt("wallet", wallet);
 
             offline++;

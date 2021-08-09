@@ -52,7 +52,8 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI blueSkinText;
     [SerializeField]
     private TextMeshProUGUI kitsuneSkinText;
-
+    [SerializeField]
+    private GameObject NotEnoughGoldText;
 
     private int wallet;
     Scene scene;
@@ -109,7 +110,7 @@ public class UIManager : MonoBehaviour
         skinsGoldText.text = "Gold: " + wallet;
 
 
-        if (hornLenght*10 <= wallet)
+        if (hornLenght * 10 <= wallet)
         {
             hornLengthButton.interactable = true;
         }
@@ -234,6 +235,7 @@ public class UIManager : MonoBehaviour
 
     public void backButton()
     {
+        NotEnoughGoldText.SetActive(false);
         refreshUI();
         changeScreen(menuScreen);
     }
